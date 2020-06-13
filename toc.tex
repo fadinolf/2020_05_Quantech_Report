@@ -1,0 +1,83 @@
+Table of Contents:
+
+- Introduction
+    - The importance of active reset scheme
+    - Overview of project
+    
+--------------------------------0---------------------------------------    
+    - (Francesco) Transmon qubit
+             What is Transmon qubit (Koch paper)
+             Transmon regime
+             Equations of motion
+             Dipole calculation
+             Capacitance calculation
+             Draw an equivalent circuit
+                - Explaining why it is important to take into account capacitance island, reservoir and cavity
+            -  Explaining what are the main capacitance
+            -Dipole calculation:
+             Theoretical introduction
+--------------------------------0--------------------------------------- 
+    - 3D cavity
+        - (Yongxin) Maxwell's equation
+        - (Yongxin) Rectangular cavity
+        - (Yongxin) Cylindrical cavity
+        - (Yongxin) Pure coaxial cavity
+        - (Yongxin) Combination [cylindrical cavity and pure coaxial cavity]
+            - Mode analysis
+            - Frequency shift due to coupling
+            - Radiation power through opening cavity
+        - Purcell filter for coaxial cavity
+            - (Alperen) Coupling between cavities: 
+                - (Alperen) Merged cavity and its problems
+                - (Alperen) Coaxial coupling line (referring to University of California, Merged study)
+            - Asymmetric design 
+            - (Yongxin) Mode analysis for two cavities
+            - Purcell decay rate and readout cavity response
+--------------------------------0---------------------------------------
+    - Input-output coupling for 3D cavity
+        - (Yongxin) General wave guide equations
+        - (Yongxin) Circular wave guide (TE, TM mode)
+        - (Yongxin) Coaxial wave guide (TEM, TE, TM mode)
+        - (Yongxin) Boundary condition of evanescent coupling
+        - (Yongxin) Coupling between wave guide and cavity mode
+        - (Alperen) Quantized input-output coupling theory
+    
+--------------------------------0---------------------------------------    
+
+- Different Reset schemes and their expectations
+    -(Yongxin) Pumping Reset Scheme
+        - (Yongxin) Intuition behind scheme
+        - (Alperen) Master equation (Lindblad master equation) 
+        - (Alperen) Master equation simulation with QuTiP (Numerical analysis to test the performance of reset scheme)
+        
+    - (Moritz) Cavity-assisted quantum bath engineering? 
+    
+--------------------------------0---------------------------------------     
+- Simulations and design of the cavity
+    - (Alperen) Ansys simulation for coupled cavities
+        -(Alperen) Frequency of the modes, field distributions, linewidths
+        - (Alperen) Coupling strength between the two fundamental modes (the theory behind fitting [the last point in Input-Output coupling for 3D Cavity section], and the function used for fitting)
+        - (Alperen) Analysis of Purcell decay of qubit through each mode (it should be already in Gitlab)
+        
+    - (Francesco) Ansys and Matlab simulation for the calculation qubit's parameters (dipole, capacitance, omega, etc.)
+    - (Moritz) Specification sheet for the cavity
+    - (Moritz) Coupling mechanism (NbTi 0.085" cables)
+    - (Francesco) CAD design 
+
+--------------------------------0--------------------------------------- 
+- Experimental Results
+    - Measurement of modes in the cavity
+    - Implementation of the branched logic
+    
+--------------------------------0--------------------------------------- 
+- Algorithmic reset
+    - (Moritz) Markov chains and transition matrices
+        - Branched logic:
+        Naive approach
+        Better protocol
+    - SEQC code, implementing branched logic 
+
+ --------------------------------0--------------------------------------
+ 
+- Conclusion and outlook
+    - Implementing branched logic into PyCQED

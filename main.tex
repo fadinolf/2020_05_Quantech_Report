@@ -1,0 +1,91 @@
+\documentclass[a4paper,12pt,twoside]{book}\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{biblatex}
+\usepackage{physics}
+\usepackage{amsmath}
+
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{minted}
+\paperheight=297mm
+\paperwidth=210mm
+
+\setlength{\textheight}{235mm}
+\setlength{\topmargin}{-1.2cm} % pour centrer la page verticalement
+%\setlength{\footskip}{5mm}
+\setlength{\textwidth}{15cm}
+\setlength{\oddsidemargin}{0.56cm}
+\setlength{\evensidemargin}{0.56cm}
+
+\pagestyle{plain}
+
+\usepackage[top=1.5cm, bottom=1.5cm, left=2.0cm, right=2.0cm]{geometry}
+
+\addbibresource{sample.bib}
+
+\title{Quantum Technology project on Superconducting Circuits}
+\author{Francesco Adinolfi, Moritz Fontboté Schmidt, Yongxin Song, \\ Alperen Tugen}
+\date{June 2020}
+
+
+%% My own little command library
+
+\providecommand{\e}[1]{\ensuremath{\cdot10^{#1}}}
+\providecommand{\half}{\ensuremath{\frac{1}{2}}} %unedemie
+\providecommand{\const}{\ensuremath{\text{const}}} %const en lettres
+\providecommand{\eval}[1]{\ensuremath{\Big|_{#1}}} % evalue
+\providecommand{\ehat}{\ensuremath{\hat{\pmb e}}} %ê 
+\providecommand{\degre}{\ensuremath{{^\circ}}} % ° 
+\def\restrict#1{\raise-.5ex\hbox{\ensuremath|}_{#1}} % restreindre une fonction
+\def\doubleunderline#1{\underline{\underline{#1}}}
+
+% Partielles
+\providecommand{\dtheta}[1]{\ensuremath{\frac{\partial #1}{\partial \theta}}}
+\providecommand{\dt}[1]{\ensuremath{\frac{\partial #1}{\partial t}}}
+\providecommand{\dz}[1]{\ensuremath{\frac{\partial #1}{\partial z}}}
+\providecommand{\dx}[1]{\ensuremath{\frac{\partial #1}{\partial x}}}
+\providecommand{\dxx}[1]{\ensuremath{\frac{\partial^2 #1}{\partial x^2}}}
+\providecommand{\dr}[1]{\ensuremath{\frac{\partial #1}{\partial r}}}
+\providecommand{\Div}[0]{\ensuremath{\nabla \cdot}} % divergence
+\providecommand{\Grad}[0]{\ensuremath{\nabla}} % gradient
+\providecommand{\Rot}[0]{\ensuremath{\nabla \wedge}} % gradient
+\providecommand{\Lapl}[0]{\ensuremath{\nabla^2}} % laplacien
+\providecommand{\p}[0]{\partial} % partiel
+
+
+
+%evalue
+
+% parentheses, matrices et tt ça
+\providecommand{\lrp}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}} %bracketmatrix
+% \newcommand{\norm}[1]{\left\lVert#1\right\rVert} % norm
+\providecommand{\abs}[1]{\lvert #1 \rvert} %abs
+
+
+\providecommand{\eqdef}[0]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}} % =def 
+\providecommand{\eqwrite}[1]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily \ensuretext{#1}}}}{=}}} % ecrire au desssus d'equation 
+\providecommand{\eqwritemath}[1]{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily {#1}}}}{=}}} % ecrire au desssus d'equation 
+
+\includeonly{chap_introduction} 
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\input{chap_introduction}
+\input{chap_transmon_qubit}
+\input{chap_3D_cavity}
+\input{chap_input_output_coupling_for_3D_cavity}
+\input{chap_different _reset_schemes_and_their_expectations}
+\input{chap_simulations_and_design_of_the_cavity}
+\input{chap_experimental_results}
+\input{chap_algorithmic_reset}
+\input{chap_conclusion_and_outlook}
+\printbibliography
+
+\end{document}
